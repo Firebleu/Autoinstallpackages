@@ -13,8 +13,8 @@ Concept :
 Instruction :
   - You need to **activate** the **multilib** repository (32-bit) : https://wiki.archlinux.org/title/Official_repositories
   - **Install** Yay or Paru : 
-=>Yay\ https://github.com/Jguer/yay
-=>Paru\ https://github.com/Morganamilo/paru
+     - Yay\ https://github.com/Jguer/yay
+     - Paru\ https://github.com/Morganamilo/paru
 
   Install **git**, **clone** this repository, **cd into** the folder and **launch** the installation :
 ```sh
