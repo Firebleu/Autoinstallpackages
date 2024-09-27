@@ -11,8 +11,8 @@ Concept :
   It will be carried out in two stages. First, the script will install packages without user intervention. Then, in the second stage, the user will be able to choose whether or not to install packages.
 
 Instruction :
-  You need to **activate** the **multilib** repository (32-bit) : https://wiki.archlinux.org/title/Official_repositories
-  **Install** Yay or Paru : Yay\ https://github.com/Jguer/yay & Paru\ https://github.com/Morganamilo/paru
+  - You need to **activate** the **multilib** repository (32-bit) : https://wiki.archlinux.org/title/Official_repositories
+  - **Install** Yay or Paru : Yay\ https://github.com/Jguer/yay & Paru\ https://github.com/Morganamilo/paru
 
   Install **git**, **clone** this repository, **cd into** the forlder and **launch** the installation :
 ```sh
