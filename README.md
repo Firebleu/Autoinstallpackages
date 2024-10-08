@@ -20,8 +20,12 @@ Include = /etc/pacman.d/multilib
 
 2. Install an AUR Helper
 You can choose between Yay or Paru. To install Yay, run:
-
-sudo pacman -S yay
+```sh
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
 
 3. Execute the Script
 Clone the repository and run the installation script:
@@ -32,12 +36,11 @@ cd autoinstallpackages
 ```
 
 🎮 Included Packages
-    - Gaming: Lutris, Steam, Wine
-    - Multimedia: VLC, GIMP, OBS Studio
+    - Steam
 
 📜 Notes
-Ensure you have an active internet connection.
-Run the script with administrative rights to avoid errors (not root).
+- Ensure you have an active internet connection.
+- Run the script with administrative rights to avoid errors (not root).
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
