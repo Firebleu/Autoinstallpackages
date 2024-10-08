@@ -1,29 +1,43 @@
-# Autoinstallpackages
-Install automatically packages on Archlinux
+# 📦 AutoInstallPackages
+Automatically install packages on Arch Linux
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Warning !
-  This script is **not strictly speaking a post-installation script**. You must therefore have a working system (preferably with your drivers already installed).
-  Its purpose is **simply to install packages automatically and quickly**.
+⚠️ Warning!
+This script is **not** a post-installation script. Ensure you have a working system (preferably with your drivers already installed). Its purpose is to quickly install packages automatically.
 
-Concept : 
-  This script is designed for **gaming and multimedia use**.
-  It will be carried out in two stages. First, the script will install packages without user intervention. Then, in the second stage, the user will be able to choose whether or not to install packages.
+💡 Concept
+This script is designed for gaming and multimedia use. It operates in two stages:
+- Automatically installs packages without user intervention.
+- Allows the user to choose whether to install additional packages.
 
-Instruction :
-  - You need to **activate** the **multilib** repository (32-bit) : https://wiki.archlinux.org/title/Official_repositories
-  - **Install** Yay or Paru : 
-     - Yay : https://github.com/Jguer/yay
-     - Paru : https://github.com/Morganamilo/paru
-
-  Install **git**, **clone** this repository, **cd into** the folder and **launch** the installation :
+🚀 Installation
+1. Enable the multilib Repository
+Edit the /etc/pacman.conf file and uncomment the following lines:
 ```sh
-sudo pacman -Sy git
-git clone https://github.com/Firebleu/autoinstallpackages
-cd autoinstallpackages
-chmod +x autoinstallpackages.sh
-./autoinstallpackages.sh
+[multilib]
+Include = /etc/pacman.d/multilib
 ```
+
+2. Install an AUR Helper
+You can choose between Yay or Paru. To install Yay, run:
+
+sudo pacman -S yay
+
+3. Execute the Script
+Clone the repository and run the installation script:
+```sh
+git clone https://github.com/Firebleu/autoinstallpackages.git
+cd autoinstallpackages
+./install.sh
+```
+
+🎮 Included Packages
+    - Gaming: Lutris, Steam, Wine
+    - Multimedia: VLC, GIMP, OBS Studio
+
+📜 Notes
+Ensure you have an active internet connection.
+Run the script with administrative rights to avoid errors (not root).
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
