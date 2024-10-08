@@ -36,7 +36,7 @@ cd autoinstallpackages
 ```
 
 🎮 Included Packages
-    - Steam
+    - Steam, Goverlay, Heroic-Games-Launcher, Lutris, Discord, Arch-Update, Timeshif
 
 📜 Notes
 - Ensure you have an active internet connection.
