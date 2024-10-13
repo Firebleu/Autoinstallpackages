@@ -1,4 +1,4 @@
-# 📦 AutoInstallPackages for Arch Linux
+
 
 ![screenshot_13102024_164311](https://github.com/user-attachments/assets/163018ca-df21-4f6d-8757-64d68c745e02)
 
