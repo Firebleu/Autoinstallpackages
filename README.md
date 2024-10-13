@@ -1,5 +1,8 @@
 # 📦 AutoInstallPackages for Arch Linux
 
+![screenshot_13102024_164311](https://github.com/user-attachments/assets/163018ca-df21-4f6d-8757-64d68c745e02)
+
+
 ## Overview
 **AutoInstallPackages** is a streamlined solution to help you automatically install essential packages on Arch Linux, especially designed for gaming and multimedia purposes. This script performs system updates, installs crucial software for a great gaming and multimedia experience, and cleans up unnecessary files.
 
