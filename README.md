@@ -1,25 +1,35 @@
-# 📦 AutoInstallPackages
-Automatically install packages on Arch Linux
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-⚠️ Warning!
-This script is **not** a post-installation script. Ensure you have a working system (preferably with your drivers already installed). Its purpose is to quickly install packages automatically.
+# 📦 AutoInstallPackages for Arch Linux
 
-💡 Concept
-This script is designed for gaming and multimedia use. It operates in two stages:
-- Automatically installs packages without user intervention.
-- Allows the user to choose whether to install additional packages.
+## Overview
+**AutoInstallPackages** is a streamlined solution to help you automatically install essential packages on Arch Linux, especially designed for gaming and multimedia purposes. This script performs system updates, installs crucial software for a great gaming and multimedia experience, and cleans up unnecessary files.
 
-🚀 Installation
-1. Enable the multilib Repository
-Edit the /etc/pacman.conf file and uncomment the following lines:
+> **⚠️ Warning**: This is not a post-installation script. Ensure you already have a working Arch Linux system (preferably with drivers installed). Its purpose is to quickly install selected packages for an enhanced experience.
+
+## 🚀 Features
+- **Automated Package Installation**: Installs required packages for gaming and multimedia without user intervention.
+- **Optional Extra Packages**: Lets you choose to install additional packages to further customize your system.
+
+## 💡 Concept
+This script is designed to enhance your Arch Linux system for gaming and multimedia use. It operates in three stages:
+1. **System Update**: Brings your system up to date.
+2. **Package Installation**: Automatically installs core gaming and multimedia software.
+3. **System Cleanup**: Frees up space by cleaning unnecessary cache files.
+
+## 🚀 Setup Instructions
+Follow these steps to prepare and execute the script:
+
+### 1. Enable the Multilib Repository
+To use certain packages, you need to enable the multilib repository:
+
+Edit the `/etc/pacman.conf` file and uncomment the following lines:
 ```sh
 [multilib]
 Include = /etc/pacman.d/multilib
 ```
 
-2. Install an AUR Helper
-You can install Paru. To install Paru, run:
+### 2. Install an AUR Helper (Paru)
+The script requires `paru`, an AUR helper, to install some packages. You can install `paru` by following these steps:
+
 ```sh
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
@@ -27,20 +37,34 @@ cd paru
 makepkg -si
 ```
 
-3. Execute the Script
+### 3. Execute the Script
 Clone the repository and run the installation script:
+
 ```sh
 git clone https://github.com/Firebleu/autoinstallpackages.git
 cd autoinstallpackages
-./install.sh
+chmod +x chmod +x ./autoinstallpackages.sh   
+./autoinstallpackages.sh
 ```
 
-🎮 Included Packages
-    - Steam, Goverlay, Heroic-Games-Launcher, Lutris, Discord, Arch-Update, Timeshif
+## 🎮 Included Packages
+The script will install the following core packages:
 
-📜 Notes
-- Ensure you have an active internet connection.
-- Run the script with administrative rights to avoid errors (not root).
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- **Steam**: A platform for gaming and game management.
+- **Goverlay**: An overlay tool for optimizing game performance.
+- **Heroic-Games-Launcher**: A game launcher supporting Epic Games and GOG.
+- **Lutris**: A gaming platform that allows you to manage games from multiple sources.
+- **Discord**: A communication app popular among gamers.
+- **Arch-Update**: Helps keep your system up to date easily.
+- **Timeshift**: System restore utility to protect your system from issues.
 
+## 📜 Important Notes
+- **Internet Connection**: Ensure you have an active internet connection during installation.
+- **Permissions**: Run the script with administrative rights using `sudo`, but do not run it as root to avoid potential issues.
+
+## 🛠️ Additional Features
+- **System Cleanup**: After installation, the script will clean up the package cache to free up disk space.
+- **Logo** : Made with IA
+
+Feel free to use this script to enhance your Arch Linux experience and get set up quickly for gaming and multimedia!
 
