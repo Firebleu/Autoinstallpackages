@@ -19,11 +19,11 @@ Include = /etc/pacman.d/multilib
 ```
 
 2. Install an AUR Helper
-You can choose between Yay or Paru. To install Yay, run:
+You can install Paru. To install Paru, run:
 ```sh
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 ```
 
