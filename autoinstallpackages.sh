@@ -122,7 +122,7 @@ done
 
 # Step to ask user about privacy protection applications
 echo
-echo -e "${YELLOW}Would you like to install privacy-protection applications? (y/n)${NC}"
+echo -e "${YELLOW}Would you like to install privacy-protection applications (Tor/Signal/SimpleX) ? (y/n)${NC}"
 read -r install_privacy_apps
 if [[ "$install_privacy_apps" == "y" || "$install_privacy_apps" == "Y" ]]; then
     echo -e "${YELLOW}Installing privacy-protection applications...${NC}"
