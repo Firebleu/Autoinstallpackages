@@ -9,8 +9,11 @@ NC='\033[0m' # No color
 
 # Add some introductory information
 clear
+
 echo -e "${BLUE}-----------------------------------------------${NC}"
-echo -e "${BLUE}   Welcome to the Arch Linux Setup Script!   ${NC}"
+
+echo -e "${BLUE}   Welcome to the Arch Linux Setup Script!     ${NC}"
+
 echo -e "${BLUE}-----------------------------------------------${NC}"
 echo -e "${YELLOW}This script will update your system, install essential packages for gaming and multimedia, and clean up unnecessary files.${NC}"
 
@@ -67,13 +70,13 @@ install_package() {
     fi
 }
 
-# Function to install a package from AUR
+# Function to install a package from AUR using paru if not already installed
 install_aur_package() {
     local package="$1"
     if ! pacman -Q $package &> /dev/null; then
         info "Installing $package from AUR..."
         if paru -S --noconfirm --needed $package; then
-            success "$package was successfully installed."
+            success "$package was successfully installed from AUR."
         else
             error_exit "Error installing $package from AUR."
         fi
@@ -82,24 +85,11 @@ install_aur_package() {
     fi
 }
 
-# Function to update the system
-update_system() {
-    info "Updating the system... This may take a while. Feel free to grab a coffee!"
-    if sudo pacman -Syu --noconfirm; then
-        success "System update completed successfully."
-    else
-        error_exit "Error updating the system."
-    fi
-}
 
 echo -e "${BLUE}-----------------------------------------------${NC}"
-echo -e "${BLUE}        Starting System Update...            ${NC}"
-echo -e "${BLUE}-----------------------------------------------${NC}"
-# Update the system
-update_system
 
-echo -e "${BLUE}-----------------------------------------------${NC}"
-echo -e "${BLUE}    Installing Essential Packages...         ${NC}"
+echo -e "${BLUE}     Starting Package Installation...          ${NC}"
+
 echo -e "${BLUE}-----------------------------------------------${NC}"
 
 # List of packages to install via pacman
@@ -130,8 +120,39 @@ for pkg in "${packages_aur[@]}"; do
     install_aur_package "$pkg"
 done
 
+# Step to ask user about privacy protection applications
+echo
+echo -e "${YELLOW}Would you like to install privacy-protection applications? (y/n)${NC}"
+read -r install_privacy_apps
+if [[ "$install_privacy_apps" == "y" || "$install_privacy_apps" == "Y" ]]; then
+    echo -e "${YELLOW}Installing privacy-protection applications...${NC}"
+    # Install Tor Browser, SimpleX Chat, and Signal
+    install_package "torbrowser-launcher"
+    install_aur_package "simplex-chat"
+    install_aur_package "signal-desktop"
+    success "Privacy-protection applications (including Signal) installed successfully."
+else
+    echo -e "${YELLOW}Skipping privacy-protection applications installation.${NC}"
+fi
+
+echo
+
 echo -e "${BLUE}-----------------------------------------------${NC}"
-echo -e "${BLUE}        Cleaning Up System Cache...           ${NC}"
+
+echo -e "${BLUE}     Post-Configuration Of The Script...       ${NC}"
+
+echo -e "${BLUE}-----------------------------------------------${NC}"
+# Add user to the gamemode group
+
+echo -e "${BLUE} Add user to the gamemode group ${NC}"
+sudo usermod -aG gamemode $(whoami)
+
+echo
+
+echo -e "${BLUE}-----------------------------------------------${NC}"
+
+echo -e "${BLUE}        Cleaning Up System Cache...            ${NC}"
+
 echo -e "${BLUE}-----------------------------------------------${NC}"
 # Function to clean the system
 clean_system() {
@@ -146,6 +167,9 @@ clean_system() {
 # Clean the system
 clean_system
 
+echo
+
 echo -e "${BLUE}-----------------------------------------------${NC}"
-echo -e "${GREEN}All operations were completed successfully.   ${NC}"
+echo -e "${GREEN} All operations were completed successfully.  ${NC}"
+
 echo -e "${BLUE}-----------------------------------------------${NC}"
