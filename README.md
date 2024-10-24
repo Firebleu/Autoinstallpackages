@@ -61,6 +61,11 @@ The script will install the following core packages:
 - **Arch-Update**: Helps keep your system up to date easily.
 - **Timeshift**: System restore utility to protect your system from issues.
 
+The script will install the following core packages:
+
+- **Tor-browser**: Best browner for privacy
+- **Signal & SimpleX**: Chat in security 
+
 ## 📜 Important Notes
 - **Internet Connection**: Ensure you have an active internet connection during installation.
 - **Permissions**: Run the script with administrative rights using `sudo`, but do not run it as root to avoid potential issues.
